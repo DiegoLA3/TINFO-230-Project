@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AVGCTB - Terms of Service</title>
+	<link rel="icon" type="image" href="logo.png">
+	<link href="style.css" rel="stylesheet">
+</head>
+<body class="flex-container">
+
+	<!-- defines the side bar -->
+	<div include-html="sidebar.html"></div>
+	<script>
+	includeHTML();
+	</script>
+	
+	<!-- defines the main content pane -->
+	<div id="content-pane">
+		<h1 id="page-title">Terms of Service</h1>
+		<div id="page-content">
+			<section id="agreement">
+				<h2>1. Agreement to Terms</h2>
+				<div class="text-content-box">
+					<p>
+						These Terms of Use constitute a legally binding agreement made between you, whether 
+						personally or on behalf of an entity (“you”) and Crypto Bot ("Company," "we," "us," or 
+						"our"), concerning your access to and use of the  http://www.cryptobot.com website as 
+						well as any other media form, media channel, mobile website or mobile application 
+						related, linked, or otherwise connected thereto (collectively, the “Site”).You agree 
+						that by accessing the Site, you have read, understood, and agreed to be bound by all of 
+						these Terms of Use. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS OF USE, THEN YOU ARE 
+						EXPRESSLY PROHIBITED FROM USING THE SITE AND YOU MUST DISCONTINUE USE IMMEDIATELY.
+					</p>
+				</div>
+			</section>
+			<section id="ip-rights">
+				<h2>2. Intellectual Property Rights</h2>
+				<div class="text-content-box">
+					<p>
+						Unless otherwise indicated, the Site is our proprietary
+						property and all source code, databases, functionality, software, website
+						designs, audio, video, text, photographs, and graphics on the Site
+						(collectively, the “Content”) and the trademarks, service marks, and logos
+						contained therein (the “Marks”) are owned or controlled by us or licensed to
+						us, and are protected by copyright and trademark laws and various other
+						intellectual property rights and unfair competition laws of the United States, international copyright laws, and international conventions. The Content and the Marks are provided on the
+						Site “AS IS” for your information and personal use only. Except as expressly provided in these Terms
+						of Use, no part of the Site and no Content or Marks may be copied, reproduced,
+						aggregated, republished, uploaded, posted, publicly displayed, encoded,
+						translated, transmitted, distributed, sold, licensed, or otherwise exploited
+						for any commercial purpose whatsoever, without our express prior written
+						permission.
+					</p>
+				</div>
+			</section>
+			<section id="user-registration">
+				<h2>3. User Registration</h2>
+				<div class="text-content-box">
+					<p>
+						You may be required to register with the Site. You agree to keep your password 
+						confidential and will be responsible for all use of your account and password. We 
+						reserve the right to remove, reclaim, or change a username you select if we 
+						determine, in our sole discretion, that such username is inappropriate, obscene, or 
+						otherwise objectionable.
+					</p>
+				</div>
+			</section>
+		</div>
+	</div>
+</body>
+</html>

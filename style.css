@@ -1,0 +1,83 @@
+body {background-color: LightGray; font-family: arial;}
+
+#side-bar {
+	position: fixed;
+	width: 300px;
+	min-height: 98vh;
+	background-color: CornflowerBlue;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+#content-pane {
+	margin-left: 300px;
+	padding-left: 20px; 
+	background-color: LightGray; 
+	color: black;
+}
+
+#page-title {
+	margin: auto;
+	padding: 10px;
+	width: fit-content;
+	text-align: center;
+	font-size: 48px;
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: WhiteSmoke;
+}
+
+#page-content {
+	margin-top: 20px;
+	padding: 10px;
+	border: 2px solid black; 
+	border-radius: 10px; 
+	background-color: whitesmoke;
+}
+
+.logo {
+	margin-left: 50px; 
+	margin-right: 50px; 
+	margin-top: 20px; 
+	margin-bottom: 20px;
+}
+
+hr.menu {width: 80%; height: 2px; background-color: Black;}
+
+#side-bar > section {
+	background-color: WhiteSmoke; 
+	margin: 30px;
+	border: 2px solid black;
+	border-radius: 10px;
+	padding: 10px;
+	text-align: center;
+}
+
+.menu-title {font-size: 30px;}
+
+.menu-item {
+	font-weight: bold; 
+	font-size: 24px;
+}
+
+a:link {color: blue; text-decoration: none;}
+
+a:visited {color: blue; text-decoration: none;}
+
+a:hover {color: lightblue;}
+
+a:active {color: red;}
+
+.bold {font-weight: bold;}
+
+.underline {text-decoration: underline;}
+
+.img-box {height: 100%; flex-wrap: wrap;}
+
+.pic-grid-item {max-width: 100%; height: auto; margin: auto;}
+
+.flex-container {display: flex;}
+
+.text-content-box {margin: auto; text-align: left; font-size: 24px; padding-left: 80px; padding-right: 40px;}
+
+h2 {font-size: 36px; padding-left: 40px;}
